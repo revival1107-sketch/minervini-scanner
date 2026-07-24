@@ -115,5 +115,5 @@ if results:
           res_df = pd.DataFrame(results)
           st.table(res_df)
           st.info("💡 **팁**: 'Strong Candidate'이면서 'VCP 패턴 감지'가 뜬 종목의 차트를 열어 피벗 포인트(돌파 지점)를 확인하세요.")
-  else:
+else:
           st.warning("현재 설정된 티커 중 조건에 부합하는 종목이 없습니다.")
