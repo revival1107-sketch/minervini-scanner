@@ -1,22 +1,22 @@
 
- import streamlit as st
- import yfinance as yf
- import pandas as pd
- import numpy as np
- from datetime import datetime, timedelta
+import streamlit as st
+import yfinance as yf
+import pandas as pd
+import numpy as np
+from datetime import datetime, timedelta
 
- # 페이지 설정
- st.set_page_config(page_title="Minervini Super-Stock Scanner", layout="wide")
+# 페이지 설정
+st.set_page_config(page_title="Minervini Super-Stock Scanner", layout="wide")
 
- st.title("🚀 Minervini Super-Stock Scanner")
- st.markdown("""
- 마크 미너비니의 **SEPA 전략**과 **Trend Template**, **VCP 패턴**을 분석하여
- 폭발적 상승 가능성이 높은 '슈퍼 스톡'을 발굴합니다.
- """)
+st.title("🚀 Minervini Super-Stock Scanner")
+st.markdown("""
+마크 미너비니의 **SEPA 전략**과 **Trend Template**, **VCP 패턴**을 분석하여
+폭발적 상승 가능성이 높은 '슈퍼 스톡'을 발굴합니다.
+""")
 
- # --- 분석 함수 정의 ---
- def analyze_minervini(ticker_symbol):
-     try:
+# --- 분석 함수 정의 ---
+def analyze_minervini(ticker_symbol):
+    try:
          # 데이터 가져오기 (1년치)
          ticker = yf.Ticker(ticker_symbol)
          df = ticker.history(period="1y")
