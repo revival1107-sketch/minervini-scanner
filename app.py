@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 st.set_page_config(page_title="Minervini Super-Stock Scanner", layout="wide")
 
 st.title("🚀 Minervini Super-Stock Scanner")
-  st.markdown("""
+st.markdown("""
   마크 미너비니의 **SEPA 전략**과 **Trend Template**, **VCP 패턴**을 분석하여
   폭발적 상승 가능성이 높은 '슈퍼 스톡'을 발굴합니다.
   """)
@@ -87,9 +87,9 @@ st.title("🚀 Minervini Super-Stock Scanner")
           return None, f"오류 발생: {str(e)}"
 
   # --- UI 구현 ---
-  st.sidebar.header("⚙️ 스캔 설정")
-  market = st.sidebar.selectbox("시장 선택", ["미국 (US)", "한국 (KR)"])
-  ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)",
+st.sidebar.header("⚙️ 스캔 설정")
+market = st.sidebar.selectbox("시장 선택", ["미국 (US)", "한국 (KR)"])
+ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)",
                                       "NVDA, AAPL, MSFT, TSLA, AVGO, PLTR" if market == "미국 (US)" else "005930.KS, 000660.KS,
    005380.KS, 068270.KS, 005490.KS")
 
