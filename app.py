@@ -108,7 +108,7 @@ for idx, ticker in enumerate(tickers):
               res, err = analyze_minervini(ticker)
               if res:
                   results.append(res)
-          progress_bar.progress((idx + 1) / len(tickers))
+  progress_bar.progress((idx + 1) / len(tickers))
 
 if results:
           st.subheader("🎯 발굴된 슈퍼 스톡 후보")
