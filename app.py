@@ -86,19 +86,24 @@ def analyze_minervini(ticker_symbol):
       except Exception as e:
           return None, f"오류 발생: {str(e)}"
 
-  # --- UI 구현 ---
+# --- UI 구현 ---
 st.sidebar.header("⚙️ 스캔 설정")
 market = st.sidebar.selectbox("시장 선택", ["미국 (US)", "한국 (KR)"])
-ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)",
-                                    "NVDA, AAPL, MSFT, TSLA, AVGO, PLTR" if market == "미국 (US)" else "005930.KS, 000660.KS,
-   005380.KS, 068270.KS, 005490.KS")
 
-  if st.sidebar.button("🚀 스캔 시작"):
+# 티커 입력 부분의 줄바꿈을 적용하여 잘림 방지
+if market == "미국 (US)":
+      default_tickers = "NVDA, AAPL, MSFT, TSLA, AVGO, PLTR"
+else:
+      default_tickers = "005930.KS, 000660.KS, 005380.KS, 068270.KS, 005490.KS"
+
+  ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)", value=default_tickers)
+
+if st.sidebar.button("🚀 스캔 시작"):
       tickers = [t.strip() for t in ticker_input.split(",")]
       results = []
 
       progress_bar = st.progress(0)
-      for idx, ticker in enumerate(tickers):
+     for idx, ticker in enumerate(tickers):
           with st.spinner(f"Analyzing {ticker}..."):
               res, err = analyze_minervini(ticker)
               if res:
@@ -109,7 +114,6 @@ ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)",
           st.subheader("🎯 발굴된 슈퍼 스톡 후보")
           res_df = pd.DataFrame(results)
           st.table(res_df)
-
           st.info("💡 **팁**: 'Strong Candidate'이면서 'VCP 패턴 감지'가 뜬 종목의 차트를 열어 피벗 포인트(돌파 지점)를
   확인하세요.")
       else:
