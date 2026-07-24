@@ -14,7 +14,7 @@ st.markdown("""
   """)
 
   # --- 분석 함수 정의 ---
-  def analyze_minervini(ticker_symbol):
+def analyze_minervini(ticker_symbol):
       try:
           # 데이터 가져오기 (1년치)
           ticker = yf.Ticker(ticker_symbol)
