@@ -5,9 +5,9 @@ import numpy as np
 from datetime import datetime, timedelta
 
   # 페이지 설정
-  st.set_page_config(page_title="Minervini Super-Stock Scanner", layout="wide")
+st.set_page_config(page_title="Minervini Super-Stock Scanner", layout="wide")
 
-  st.title("🚀 Minervini Super-Stock Scanner")
+st.title("🚀 Minervini Super-Stock Scanner")
   st.markdown("""
   마크 미너비니의 **SEPA 전략**과 **Trend Template**, **VCP 패턴**을 분석하여
   폭발적 상승 가능성이 높은 '슈퍼 스톡'을 발굴합니다.
