@@ -104,7 +104,7 @@ if st.sidebar.button("🚀 스캔 시작"):
 
       progress_bar = st.progress(0)
 for idx, ticker in enumerate(tickers):
-with st.spinner(f"Analyzing {ticker}..."):
+  with st.spinner(f"Analyzing {ticker}..."):
               res, err = analyze_minervini(ticker)
               if res:
                   results.append(res)
