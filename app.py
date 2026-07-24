@@ -90,7 +90,7 @@ def analyze_minervini(ticker_symbol):
 st.sidebar.header("⚙️ 스캔 설정")
 market = st.sidebar.selectbox("시장 선택", ["미국 (US)", "한국 (KR)"])
 ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)",
-                                      "NVDA, AAPL, MSFT, TSLA, AVGO, PLTR" if market == "미국 (US)" else "005930.KS, 000660.KS,
+                                    "NVDA, AAPL, MSFT, TSLA, AVGO, PLTR" if market == "미국 (US)" else "005930.KS, 000660.KS,
    005380.KS, 068270.KS, 005490.KS")
 
   if st.sidebar.button("🚀 스캔 시작"):
