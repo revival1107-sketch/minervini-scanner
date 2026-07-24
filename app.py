@@ -96,7 +96,7 @@ if market == "미국 (US)":
 else:
       default_tickers = "005930.KS, 000660.KS, 005380.KS, 068270.KS, 005490.KS"
 
-  ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)", value=default_tickers)
+ticker_input = st.sidebar.text_area("티커 입력 (쉼표로 구분)", value=default_tickers)
 
 if st.sidebar.button("🚀 스캔 시작"):
       tickers = [t.strip() for t in ticker_input.split(",")]
