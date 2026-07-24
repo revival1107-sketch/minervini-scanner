@@ -103,14 +103,14 @@ if st.sidebar.button("🚀 스캔 시작"):
       results = []
 
       progress_bar = st.progress(0)
-    for idx, ticker in enumerate(tickers):
-          with st.spinner(f"Analyzing {ticker}..."):
+for idx, ticker in enumerate(tickers):
+with st.spinner(f"Analyzing {ticker}..."):
               res, err = analyze_minervini(ticker)
               if res:
                   results.append(res)
           progress_bar.progress((idx + 1) / len(tickers))
 
-      if results:
+if results:
           st.subheader("🎯 발굴된 슈퍼 스톡 후보")
           res_df = pd.DataFrame(results)
           st.table(res_df)
